@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulacion del DOM con JavaScript</title>
+    <style>
+        /*Estilos para cambiar el color del texto*/
+        .CambiarColor{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulacion del DOM con JavaScript</h1>
+    <!--Elemento para demostrar la modificacion del DOM-->
+    <p id="demo">Este es un parrafo.</p>
+
+    <!--Botones para realizar acciones-->
+    <button onclick="cambiarContenido()">Cambiar Contenido</button>
+    <button onclick="CambiarColor()">Cambiar Color</button>
+    <button onclick="añadirElemento()">Añadir Elemento</button>
+
+    <script>
+        //Funcion para cambiar el contenido del parrafo
+        function cambiarContenido(){
+            document .getElementById("demo").innerHTML = "!Contenido cambiado!";
+        }
+        //Funcion para cambiar el color del texto 
+        function CambiarColor(){
+            document.getElementById("demo").className = "CambiarColor";
+        }
+        //Funcion para añadir un nuevo elemento al final del cuerpo
+        function añadirElemento(){
+            var nuevoElemento = document.createElement("p");
+            var texto = document .createTextNode("Este es un nuevo parrafo.");
+            nuevoElemento.appendChild(texto);
+            document.body.appendChild(nuevoElemento);  
+        }
+    </script>
+</body>
+</html>
